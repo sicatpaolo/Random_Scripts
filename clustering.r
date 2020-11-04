@@ -4,7 +4,7 @@ library(ggplot2)
 library(reshape2)
 library(tidyverse)
 setwd("/Users/juanpaolosicat/Desktop/Master/New_files/Clustering_Unknown/CLUSTERING_THE_UNKNOWN/clustering/Rscripts")
-setwd("/rhome/seseal/bigdata/RepeatMasker/Finalset/CLEANED-04062019/CLUSTERING_THE_UNKNOWN/clustering/Rscripts")
+
 Whitefly_Clusters <- read.csv(file="../Whitefly/Whitefly.cluster.uc", sep="\t", header = FALSE)
 NonWhitefly_Clusters <- read.csv(file="../NonWhitefly/NonWhitefly.cluster.uc", sep="\t", header = FALSE)
 colnames(Whitefly_Clusters) <- c("Record_Type", "Cluster_Number","Sequence_Length","per_identity","strand","ignore_1","ignore_2","Compressed_Alignement", "Query", "Target")
