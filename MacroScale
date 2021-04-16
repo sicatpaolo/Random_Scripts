@@ -1,0 +1,22 @@
+Sub MacroScale()
+'
+' MacroScale Macro
+'
+' Keyboard Shortcut: Ctrl+n
+'
+    Range(ActiveCell, ActiveCell.Offset(70, 0)).Select
+    Selection.FormatConditions.AddColorScale ColorScaleType:=2
+    Selection.FormatConditions(Selection.FormatConditions.Count).SetFirstPriority
+    Selection.FormatConditions(1).ColorScaleCriteria(1).Type = _
+        xlConditionValueLowestValue
+    With Selection.FormatConditions(1).ColorScaleCriteria(1).FormatColor
+        .Color = 16776444
+        .TintAndShade = 0
+    End With
+    Selection.FormatConditions(1).ColorScaleCriteria(2).Type = _
+        xlConditionValueHighestValue
+    With Selection.FormatConditions(1).ColorScaleCriteria(2).FormatColor
+        .Color = 8109667
+        .TintAndShade = 0
+    End With
+End Sub
