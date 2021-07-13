@@ -1,0 +1,38 @@
+####Juan Paolo Sicat
+####J.A.Sicat@greenwich.ac.uk
+
+###### Correlation of Genome Size and TE Length
+#### Resource http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r
+####  Pearson correlation coefficients measure the linear relationship between the variables while 
+####  Spearman correlation coefficients measure only monotonic relationships, relationship in which the 
+#### variables tend to move in the same/opposite direction but not necessarily at a constant rate whereas 
+#### the rate is constant in a linear relationship. (https://www.analyticsvidhya.com/blog/2021/03/comparison-of-pearson-and-spearman-correlation-coefficients/)
+
+library("ggpubr")
+
+# Data format
+# Tab delimited
+Summary_table <- read.table(
+  header=TRUE, text='Assembly Size  TE_length
+  AssemblyName  Value Value
+  '
+)
+
+# Plot Graph.
+# I used spearman for my six genome dataset.
+cor(Summary_table$Size,Summary_table$TE_length, method = c("pearson", "kendall", "spearman"))
+ggscatter(Summary_table, x = "Size", y = "TE_length", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.method = "spearman", 
+          label = "Assembly",
+          repel = TRUE,
+          xlab = "Genome Size in Mbps", ylab = "% Coverage of Transposable Elements")
+
+# Check Distribution
+# Greater than 0.05. Assume Normality
+shapiro.test(Summary_table$Size)
+shapiro.test(Summary_table$TE_length)
+
+# Statistics
+cor.test(Summary_table$TE_length, Summary_table$Size,  method = "spearman")
+
