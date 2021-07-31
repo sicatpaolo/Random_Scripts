@@ -15,6 +15,15 @@ Multiple_scaffolds_into_one.sh = Replace headers with 100 Ns and turn them into 
 
 WGSid_to_ORG.sh = Obtains a list of organism names based on WGS ids.
 
+GFF_conversion.sh = Replaces feature with TEClass for gff files
+
+```
+# from
+  tig00044410     RepeatMasker    similarity      7       66       8.5    -       .       Target "Motif:Cluster219" 29 89
+# to
+  tig00044410     AUGUSTUS        gene    467     2462    0.8     +       .       ID=g1;  tig00044410     RepeatMasker    DNA     7       66       8.5    -       .       Target "Motif:Cluster219" 29 89
+```
+
 # Python
 
 BreadthFirstSearch.py = Breadth first search function learned from datacamp
