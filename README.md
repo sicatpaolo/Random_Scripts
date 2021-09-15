@@ -24,6 +24,10 @@ GFF_conversion.sh = Replaces feature with TEClass for gff files
   tig00044410     AUGUSTUS        gene    467     2462    0.8     +       .       ID=g1;  tig00044410     RepeatMasker    DNA     7       66       8.5    -       .       Target "Motif:Cluster219" 29 89
 ```
 
+getfasta.sh = Script to submit to cluster for converting gtf files to fasta. GTF files were output from RepeatMasker and BRAKER
+
+
+
 # Python
 
 BreadthFirstSearch.py = Breadth first search function learned from datacamp
